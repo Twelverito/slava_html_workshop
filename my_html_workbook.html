@@ -24,23 +24,15 @@
 
 <form action="/action_page.php" method="get">
 <label for="fname">First name:</label>
-<input type="text" id="fname" name="fname"><br><br>
+<input type="text" id="fname" name="fname" pattern="[A-Za-z]" size="50" required><br><br>
 <label for="lname">Last name:</label>
-<input type="text" id="lname" name="lname"><br><br>
+<input type="text" id="lname" pattern="[A-Za-z]" name="lname" size="30" required><br><br>
 <input type="submit" value="Submit using GET">
-<input type="submit" formmethod="post" value="Submit using POST">
+<input type="submit" formmethod="post" value="Submit using POST"><br>
 
- <br><label><input type="radio" name="radio"> Select me</label><br>
+ <label><input type="radio" name="radio"> Select me</label><br>
  
- <fieldset>
- <legend>Title</legend>
-    <label><input type="radio" name="radio"> Select me</label>
- </fieldset>
- 
-
-
-</form>	
-	
+ </form>
 	
 	 </body>
  </html>
