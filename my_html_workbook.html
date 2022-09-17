@@ -8,11 +8,8 @@
 
 <form>
   <p>
-    This is a link for GET method: /test/demo_form.php?name1=value1&name2=value2
-  </p>
-  <br>
-  <p>
-    This is a link for POST method: /test/demo_form.php with parameters: name1=value1&name2=value2
+    Example link for GET method: /action_page.php?id=1&name=value <br>
+    Example link for POST method: /test/demo_form.php with parameters: id=1&name=value
   </p>
 </form>
 
@@ -31,13 +28,26 @@
 
 <form action="/action_page.php" method="get">
 <label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" pattern="[A-Za-z]" size="50" required><br><br>
+<input type="text" id="fname" name="fname" pattern="[A-Za-z]" size="50" maxlength="20" required><br><br>
 <label for="lname">Last name:</label>
-<input type="text" id="lname" pattern="[A-Za-z]" name="lname" size="30" required><br><br>
+<input type="text" id="lname" pattern="[A-Za-z]" name="lname" size="20" maxlength="20" required><br><br>
+
+<label for="marital_status">Choose a marital status:</label>
+<select name="marital_status" id="marital_status">
+  <option value="single">Single</option>
+  <option value="Married">Married</option>
+  <option value="Widowed">Widowed</option>
+  <option value="Divorced">Divorced</option>
+  <option value="Separated">Separated</option>
+  <option value="Registered_Partnership">Registered Partnership</option>
+</select><br>
+
+<textarea id="comment" name="comment" rows="10" cols="100">Leave any comment.</textarea><br>
+
+
 <input type="submit" value="Submit using GET">
 <input type="submit" formmethod="post" value="Submit using POST"><br>
 
- <label><input type="radio" name="radio"> Select me</label><br>
  </form>
 
  
