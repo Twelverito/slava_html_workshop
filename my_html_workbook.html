@@ -22,15 +22,16 @@
 <form action="/action_page.php" method="post">
 <label for="lname">Last name:</label><br>
 <input type="text" id="lname" name="lname" value="default"><br>
-<input type="submit" value="POST">
+<input type="submit" formenctype="multipart/form-data"
+value="Submit as Multipart/form-data">
 </form><br>
 
 
 <form action="/action_page.php" method="get">
 <label for="fname">First name:</label>
-<input type="text" id="fname" name="fname" pattern="[A-Za-z]" size="50" maxlength="20" required><br><br>
+<input type="text" id="fname" name="fname" pattern="[A-Za-z]{2,20}" size="50" required><br><br>
 <label for="lname">Last name:</label>
-<input type="text" id="lname" pattern="[A-Za-z]" name="lname" size="20" maxlength="20" required><br><br>
+<input type="text" id="lname" pattern="[A-Za-z]{2,20}" name="lname" size="20" required><br><br>
 
 <label for="marital_status">Choose a marital status:</label>
 <select name="marital_status" id="marital_status">
@@ -46,16 +47,23 @@
 
 
 <input type="submit" value="Submit using GET">
-<input type="submit" formmethod="post" value="Submit using POST"><br>
+<input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+<input type="submit" formmethod="post" value="Submit using POST">
+<input type="submit" formnovalidate="formnovalidate"
+value="Submit without validation">
+<input type="submit" formaction="/action_page2.php" value="Submit as Admin (formaction attribute)"><br>
+
 
  </form>
 
 <br>
 
 <form>
-  <p>YouTube video example</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <h3>YouTube video example</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </form>
+
+
 
 <form>
 <p>Click the button to get your coordinates.</p>
@@ -81,6 +89,8 @@ function showPosition(position) {
 }
 </script>
 </form>
+
+
 
 	 </body>
  </html>
