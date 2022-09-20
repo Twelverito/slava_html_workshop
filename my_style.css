@@ -41,9 +41,9 @@ pre
 }
 
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
+	background-color: white;
+	border: 1px;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	text-decoration: none;
@@ -51,4 +51,8 @@ pre
 	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
+  }
+
+  .button:hover {
+	background-color:greenyellow;
   }
