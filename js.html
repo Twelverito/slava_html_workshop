@@ -1,13 +1,50 @@
 <!DOCTYPE html>
- <head>
-	 <title>Untitled</title>
-	 <meta charset="UTF-8"/>
-	 <link rel="stylesheet" href="" type="text/css"/>
-	 <style>
-</style>
-	 
- </head>
-	 <body>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Classwork</title>
 
-	 </body>
- </html>
+<style>
+  .changeColour {
+    background-color:purple	;
+   }
+  .defaultColour{
+  	background-color:white ;
+  }
+</style>
+</head>
+
+<body>
+<form action="/action_page.php" method="post">
+<label for="email">Email:</label><br>
+<input type="text" id="email" name="email" value="default"><br>
+<input type="submit" id='colorButton' class=none onmouseover ='changeColor()' onmouseleave='restoreColor()' value="Subscribe">
+</form><br>
+
+
+<img src="arrow.jpeg" alt='arrow' id='arrow' style="position: relative;left:0;width: 100px;height: 100px"><br>
+
+<button type="button" onclick='moveRight()'>Click to move right!</button>
+
+</body>
+
+<script>
+  function changeColor(){
+    document.getElementById('colorButton').className = 'changeColour';
+  }
+
+  function restoreColor(){
+    document.getElementById('colorButton').className = 'defaultColour';
+  }
+
+  function moveRight(){
+  	var step=50;
+  	var x=document.getElementById('arrow').offsetLeft;
+  	x=x+step;
+  	document.getElementById('arrow').style.left=x+'px';
+  }
+
+</script>
+
+</html>
