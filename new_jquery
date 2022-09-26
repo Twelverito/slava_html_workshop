@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="buttons" style="display: none">
+	<button id="fadeOut">Fade out effect</button>
+	<button id="fadeIn">Fade in effect</button>
+	<button id="fadeToggle">Fade toggle effect</button>
+	<br><br>
+	<button id="hide">Hide effect</button>
+	<button id="show">Show effect</button>
+	<button id="toggle">Hide/Show Toggle effect</button>
+	<br><br>
+	<button id="animationEffect">Animation Effect</button>
+	<button id="animationEffectReversed">Animation Effect</button>
+	<br><br>
+	</div>
+
+	<button id="slideDown">Slide Down effect</button>
+	<button id="slideUp">Slide Up effect</button>
+	<button id="slideToggle">Slide Toggle effect</button>
+
+	<div id="square" style="background-color: mediumpurple;position: relative;width: 100px; height: 100px;">
+		<h2 style="opacity: 0;text-align: center;" id="hiddenMessage">Hello</h2>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+	$("#fadeOut").click(function(){
+		$("#square").fadeOut(1000,function(){
+			$("#fadeOut").css("color", "green");
+			$("#fadeIn").css("color", "black");
+		});
+	});
+
+	$("#fadeIn").click(function(){
+		$("#square").fadeIn(1000, function(){
+			$("#fadeOut").css("color", "black");
+			$("#fadeIn").css("color", "green");
+		});
+	});
+
+	$("#fadeToggle").click(function(){
+		$("#square").fadeToggle(1000, function(){
+			$("#fadeOut").css("color", "purple");
+			$("#fadeIn").css("color", "purple");
+		});
+	});
+
+	$("#hide").click(function(){
+		$("#square").hide(1000);
+	});
+
+	$("#show").click(function(){
+		$("#square").show(1000);
+	});
+
+	$("#toggle").click(function(){
+		$("#square").toggle(1000);
+	});
+
+
+	$("#slideDown").click(function() {
+		$("#buttons").slideDown();
+		$("#animation").slideDown();
+	});
+
+	$("#slideUp").click(function() {
+		$("#buttons").slideUp();
+		$("#animation").slideUp();
+	});
+
+	$("#slideToggle").click(function() {
+		$("#buttons").slideToggle();
+		$("#animation").slideToggle();
+	});
+
+	$("#animationEffect").click(function() {
+		$("#square").animate({
+			left:500,
+			height:'300px',
+			width:'300px',
+			opacity: '0.5'
+		});
+	});
+
+	$("#animationEffectReversed").click(function() {
+		$("#square").animate({
+			left:0,
+			height:'100px',
+			width:'100px',
+			opacity: '1'
+		});
+	});
+
+    $("#square").hover(function(){
+        $("#hiddenMessage").css("opacity", "1");
+    },
+    function(){
+        $("#hiddenMessage").css("opacity", "0");
+    });
+
+
+</script>
+</html>
